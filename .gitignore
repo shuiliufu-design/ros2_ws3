@@ -1,6 +1,22 @@
+# colcon build artifacts
 build/
 install/
 log/
 .colcon/
+
+# IDE
 .vscode/
 .idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# big models (optional but recommended)
+*.pt
+*.onnx
+*.engine
+
+# third-party repos (not tracked)
+src/sllidar_ros2/
+src/realsense-ros/
