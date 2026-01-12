@@ -1,0 +1,77 @@
+slam_toolbox:
+  ros__parameters:
+    # ✅ 调整最小激光范围，与nav2_params一致
+    min_laser_range: 0.25   # 与激光雷达驱动的range_min一致
+    # Solver Params
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # ROS Parameters
+    use_sim_time: false
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint 
+    scan_topic: /scan
+    use_map_saver: true
+    mode: mapping #localization
+
+    # Mapping Params
+    # 2D SLAM specific
+    map_file_name: test_map
+    map_start_pose: [0.0, 0.0, 0.0]
+    map_start_at_dock: true
+
+    debug_logging: false
+    throttle_scans: 1
+    transform_publish_period: 0.05 #if 0 never publishes odometry
+    map_update_interval: 1.0        # 原0.1 - 每秒更新一次地图，避免过于频繁
+    resolution: 0.05                # 原0.01 - 5cm分辨率更合理
+    max_laser_range: 12.0 #for rastering images
+    minimum_time_interval: 0.09
+    transform_timeout: 0.1 #原0.2
+    tf_buffer_duration: 60.0 #原30.0
+    stack_size_to_use: 80000000 #(40000000)program needs a larger stack size to serialize large maps
+    enable_interactive_mode: true
+
+    # General Parameters
+    use_scan_matching: true
+    use_scan_barycenter: true
+    use_median: false
+    minimum_travel_distance: 0.0          # 设为0，允许纯旋转更新地图
+    minimum_travel_heading: 0.05          # 原0.1 - 约2.9度才更新
+    scan_buffer_size: 50
+    scan_buffer_maximum_scan_distance: 12.0
+    link_match_minimum_response_fine: 0.1  
+    link_scan_maximum_distance: 1.5
+    loop_search_maximum_distance: 1.0
+    loop_search_minimum_chain_size: 5
+    loop_search_maximum_key_frames: 200
+    loop_search_space_radius: 12.0
+    loop_minimum_score: 0.2
+    use_scan_registration: true
+    do_loop_closing: true
+
+    # Correlation Parameters - Correlation Parameters
+    correlation_search_space_dimension: 0.1
+    correlation_search_space_resolution: 0.005
+    correlation_search_space_smear_deviation: 0.05 
+
+    # Correlation Parameters - Loop Closure Parameters
+    # loop_search_space_dimension: 8.0
+    # loop_search_space_resolution: 0.05
+    # loop_search_space_smear_deviation: 0.03
+
+    # Scan Matcher Parameters
+    distance_variance_penalty: 1.0      
+    angle_variance_penalty: 2.0    
+
+    fine_search_angle_offset: 0.0001    
+    coarse_search_angle_offset: 0.5      # 原0.1 - 约28.6°，允许更大旋转匹配
+    coarse_angle_resolution: 0.005        
+    minimum_angle_penalty: 1.0
+    minimum_distance_penalty: 0.8
+    use_response_expansion: true

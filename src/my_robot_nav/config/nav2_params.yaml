@@ -1,0 +1,965 @@
+# amcl:
+#   ros__parameters:
+#     use_sim_time: false
+#     alpha1: 0.2
+#     alpha2: 0.2
+#     alpha3: 0.2
+#     alpha4: 0.2
+#     alpha5: 0.2
+#     base_frame_id: "base_footprint"
+#     beam_skip_distance: 0.5
+#     beam_skip_error_threshold: 0.9
+#     beam_skip_threshold: 0.3
+#     do_beamskip: false
+#     global_frame_id: "map"
+#     lambda_short: 0.1
+#     laser_likelihood_max_dist: 2.0
+#     laser_max_range: 100.0
+#     laser_min_range: -1.0
+#     laser_model_type: "likelihood_field"
+#     max_beams: 60
+#     max_particles: 2000
+#     min_particles: 500
+#     odom_frame_id: "odom"
+#     pf_err: 0.05
+#     pf_z: 0.99
+#     recovery_alpha_fast: 0.0
+#     recovery_alpha_slow: 0.0
+#     resample_interval: 1
+#     robot_model_type: "omni"
+#     save_pose_rate: 0.5
+#     sigma_hit: 0.2
+#     tf_broadcast: true
+#     transform_tolerance: 1.0
+#     update_min_a: 0.2
+#     update_min_d: 0.25
+#     z_hit: 0.5
+#     z_max: 0.05
+#     z_rand: 0.5
+#     z_short: 0.05
+#     scan_topic: /scan
+
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map
+    robot_base_frame: base_footprint
+    odom_topic: /odom
+    bt_loop_duration: 10
+    default_server_timeout: 20
+    wait_for_service_timeout: 1000
+    action_server_result_timeout: 900.0
+    navigators: ["navigate_to_pose", "navigate_through_poses"]
+    navigate_to_pose:
+      plugin: "nav2_bt_navigator/NavigateToPoseNavigator" # 保持 /
+    navigate_through_poses:
+      plugin: "nav2_bt_navigator/NavigateThroughPosesNavigator" # 保持 /
+    error_code_names:
+      - compute_path_error_code
+      - follow_path_error_code
+
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    cmd_vel_topic: /cmd_vel_raw
+    controller_frequency: 20.0
+    costmap_update_timeout: 0.30
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.5         # 原0.3 - 更宽松的故障容忍
+    progress_checker_plugins: ["progress_checker"]
+    goal_checker_plugins: ["general_goal_checker"] 
+    controller_plugins: ["FollowPath"]
+    use_realtime_priority: false
+
+    # Progress checker parameters
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker" # 保持 :: (已验证通过)
+      required_movement_radius: 0.3   # 原0.5 - 更小的移动也算进度
+      movement_time_allowance: 20.0   # 原10.0 - 给更多时间移动
+    # Goal checker parameters
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker" # 保持 :: (已验证通过)
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.25
+    # DWB 控制器 - 更适合全向机器人和动态环境
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      debug_trajectory_details: True
+      # 速度限制 - 允许横向移动但优先前进
+      min_vel_x: 0.0                # 禁用后退，强制先转向再前进
+      max_vel_x: 0.15             # 降低前进速度
+      min_vel_y: -0.1
+      max_vel_y: 0.1              # 恢复横向能力，但低于X轴
+      max_vel_theta: 0.5
+      min_speed_xy: 0.0
+      max_speed_xy: 0.2           # 进一步降低速度
+      min_speed_theta: 0.0
+      # 加速度限制
+      acc_lim_x: 0.5
+      acc_lim_y: 0.5
+      acc_lim_theta: 1.0
+      decel_lim_x: -0.5
+      decel_lim_y: -0.5
+      decel_lim_theta: -1.0
+      # 轨迹采样参数
+      vx_samples: 20
+      vy_samples: 5                 # 恢复Y方向采样
+      vtheta_samples: 40
+      sim_time: 1.5
+      linear_granularity: 0.05
+      angular_granularity: 0.025
+      transform_tolerance: 0.2
+      # 目标容差
+      xy_goal_tolerance: 0.25
+      trans_stopped_velocity: 0.25
+      short_circuit_trajectory_evaluation: True
+      # 评分标准
+      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      BaseObstacle.scale: 0.05      # 原0.02 - 增大避障权重
+      PathAlign.scale: 48.0         # 增大 - 更严格跟随路径
+      PathAlign.forward_point_distance: 0.325  # 增大 - 看更远的点
+      GoalAlign.scale: 24.0
+      GoalAlign.forward_point_distance: 0.325  # 增大 - 看更远的点
+      PathDist.scale: 32.0
+      GoalDist.scale: 24.0
+      RotateToGoal.scale: 32.0
+      RotateToGoal.slowing_factor: 5.0
+      RotateToGoal.lookahead_time: -1.0
+      # 抗振荡参数
+      Oscillation.oscillation_reset_dist: 0.05
+      Oscillation.oscillation_reset_angle: 0.2
+      Oscillation.scale: 1.0
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 15.0      # ✅ 提高更新频率，加快雷达响应
+      publish_frequency: 5.0
+      global_frame: odom
+      robot_base_frame: base_footprint
+      rolling_window: true
+      width: 5
+      height: 5
+      resolution: 0.05
+      # 使用圆形robot_radius（更简单稳定）
+      robot_radius: 0.28          # 机器人半径 + 安全边距
+      transform_tolerance: 0.5
+
+      plugins: ["obstacle_layer","voxel_layer","inflation_layer"]
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        footprint_clearing_enabled: true   # ✅ 清除footprint内的障碍物
+        observation_sources: scan
+        scan:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: true
+          clearing: true
+          inf_is_valid: true
+          obstacle_min_range: 0.25         # ✅ 与雷达驱动range_min保持一致
+          obstacle_max_range: 3.0
+          raytrace_min_range: 0.0          # ✅ 修复: raytrace从0开始，确保近距离清除
+          raytrace_max_range: 10.0
+
+      voxel_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: true
+        footprint_clearing_enabled: true
+        origin_z: 0.0
+        z_resolution: 0.05
+        z_voxels: 16
+        max_obstacle_height: 0.8
+        unknown_threshold: 15
+        mark_threshold: 0                  # 立即标记（检测灵敏）
+        publish_voxel_map: false
+        # ✅ 关键修复：同时使用激光雷达和相机
+        # 激光雷达负责360度clearing，相机负责前方marking
+        observation_sources: scan_clearing depth_cam camera_scan
+
+        # ✅ 激光雷达 - 仅用于CLEARING（360度清除粉色区域）
+        scan_clearing:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: false                   # 不标记（避免重复）
+          clearing: true                   # ✅ 关键：360度清除！
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.8         # ✅ 提高到80cm，覆盖相机标记范围
+          obstacle_min_range: 0.25
+          obstacle_max_range: 10.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 12.0         # 大范围清除
+
+        # ✅ 相机点云 - 用于标记3D障碍物
+        depth_cam:
+          topic: /camera/camera/depth/color/points
+          data_type: "PointCloud2"
+          sensor_frame: "camera_depth_optical_frame"
+          marking: true
+          clearing: true
+          min_obstacle_height: 0.08        # 8cm以上
+          max_obstacle_height: 0.8
+          obstacle_min_range: 0.60         # ✅ 相机盲区约0.6m
+          obstacle_max_range: 3.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+        # ✅ 相机伪激光 - 用于检测低矮障碍物
+        camera_scan:
+          topic: /camera/scan              # pointcloud_to_laserscan输出
+          data_type: "LaserScan"
+          marking: true                    # 标记低矮障碍物
+          clearing: true
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5         # 50cm以下的障碍物
+          obstacle_min_range: 0.50
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0           # 增大：代价下降更快，减少膨胀范围
+        inflation_radius: 0.30             # ✅ 减小膨胀半径，减少粉色区域
+
+      # 注意：local_costmap使用rolling_window模式，不需要static_layer
+      always_send_full_costmap: True
+
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 2.0
+      publish_frequency: 1.0
+      global_frame: map
+      robot_base_frame: base_footprint
+      robot_radius: 0.28          # 与local_costmap一致
+      resolution: 0.05
+      track_unknown_space: true
+      transform_tolerance: 0.5
+
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+        subscribe_to_updates: True
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        footprint_clearing_enabled: True
+        max_obstacle_height: 0.8
+        z_voxels: 16
+        origin_z: 0.0
+        z_resolution: 0.05
+        unknown_threshold: 15
+        mark_threshold: 0
+        publish_voxel_map: false
+        # ✅ 与local_costmap相同的配置
+        observation_sources: scan_clearing depth_cam camera_scan
+
+        scan_clearing:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: false
+          clearing: true
+          inf_is_valid: True
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.25
+          obstacle_max_range: 10.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 12.0
+
+        depth_cam:
+          topic: /camera/camera/depth/color/points
+          sensor_frame: "camera_depth_optical_frame"
+          data_type: "PointCloud2"
+          marking: True
+          clearing: True
+          min_obstacle_height: 0.08
+          max_obstacle_height: 0.8
+          obstacle_min_range: 0.60
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+        camera_scan:
+          topic: /camera/scan
+          data_type: "LaserScan"
+          marking: true
+          clearing: true
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.50
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0             # ✅ 加快代价衰减
+        inflation_radius: 0.30               # ✅ 减小膨胀半径
+
+      always_send_full_costmap: True
+
+map_saver:
+  ros__parameters:
+    use_sim_time: false
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+    map_subscribe_transient_local: True
+
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    expected_planner_frequency: 20.0
+    planner_plugins: ["GridBased"]
+    costmap_update_timeout: 1.0
+    GridBased:
+      plugin: "nav2_smac_planner/SmacPlanner2D"
+      tolerance: 0.25                     # 目标容差
+      downsample_costmap: false           # 不降采样
+      downsampling_factor: 1
+      allow_unknown: true                 # 允许穿越未知区域
+      max_iterations: 1000000             # 最大迭代次数
+      max_planning_time: 2.0              # 最大规划时间
+      motion_model_for_search: "MOORE"    # 8向搜索
+      cost_travel_multiplier: 2.0         # 代价乘数
+      use_final_approach_orientation: false
+      smoother:
+        max_iterations: 1000
+        w_smooth: 0.3
+        w_data: 0.2
+        tolerance: 1.0e-10
+
+smoother_server:
+  ros__parameters:
+    use_sim_time: false
+    smoother_plugins: ["simple_smoother"]
+    simple_smoother:
+      plugin: "nav2_smoother::SimpleSmoother" # 保持 :: (已验证通过)
+      tolerance: 1.0e-10
+      max_its: 1000
+      do_refinement: True
+
+behavior_server:
+  ros__parameters:
+    use_sim_time: false
+    cmd_vel_topic: /cmd_vel_raw
+    local_costmap_topic: local_costmap/costmap_raw
+    global_costmap_topic: global_costmap/costmap_raw
+    local_footprint_topic: local_costmap/published_footprint
+    global_footprint_topic: global_costmap/published_footprint
+    cycle_frequency: 10.0
+    behavior_plugins: ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
+    spin:
+      plugin: "nav2_behaviors/Spin" # 修正为 /
+    backup:
+      plugin: "nav2_behaviors/BackUp" # 修正为 /
+    drive_on_heading:
+      plugin: "nav2_behaviors/DriveOnHeading" # 修正为 /
+    wait:
+      plugin: "nav2_behaviors/Wait" # 修正为 /
+    assisted_teleop:
+      plugin: "nav2_behaviors/AssistedTeleop" # 修正为 /
+    local_frame: odom
+    global_frame: map
+    robot_base_frame: base_footprint
+    transform_tolerance: 0.1
+    simulate_ahead_time: 3.0        # 原2.0 - 更长的前瞻时间
+    max_rotational_vel: 0.5         # 原0.4 - 更快旋转脱困
+    min_rotational_vel: 0.1
+    rotational_acc_lim: 3.2
+
+waypoint_follower:
+  ros__parameters:
+    use_sim_time: false
+    loop_rate: 20
+    stop_on_failure: false
+    action_server_result_timeout: 900.0
+    waypoint_task_executor_plugin: "wait_at_waypoint"
+    wait_at_waypoint:
+      plugin: "nav2_waypoint_follower::WaitAtWaypoint" # 保持 :: (Humble下通常是这个)
+      enabled: True
+      waypoint_pause_duration: 200
+
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: false
+    smoothing_frequency: 20.0
+    feedback: "OPEN_LOOP"
+    max_velocity: [0.15, 0.1, 0.5]       # 恢复Y轴速度
+    min_velocity: [-0.15, -0.1, -0.5]
+    max_accel: [0.3, 0.3, 1.0]           # 恢复Y轴加速度
+    max_decel: [-0.3, -0.3, -1.0]
+    odom_topic: /odom
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0
+    cmd_vel_in_topic: /cmd_vel_raw
+    cmd_vel_out_topic: /cmd_vel
+
+# Collision Monitor - 实时碰撞监测，紧急停止
+# 简化配置，避免启动问题
+collision_monitor:
+  ros__parameters:
+    base_frame_id: "base_footprint"
+    odom_frame_id: "odom"
+    cmd_vel_in_topic: "/cmd_vel"
+    cmd_vel_out_topic: "/cmd_vel_safe"
+    state_topic: "collision_monitor_state"
+    transform_tolerance: 0.5
+    source_timeout: 2.0
+    base_shift_correction: True
+    stop_pub_timeout: 2.0
+    # 使用简单的圆形检测区域
+    polygons: ["PolygonStop", "PolygonSlow"]
+    PolygonStop:
+      type: "circle"
+      radius: 0.30
+      action_type: "stop"
+      max_points: 3
+      visualize: True
+      polygon_pub_topic: "polygon_stop"
+    PolygonSlow:
+      type: "circle"
+      radius: 0.50
+      action_type: "slowdown"
+      max_points: 3
+      slowdown_ratio: 0.3
+      visualize: True
+      polygon_pub_topic: "polygon_slow"
+    # 仅使用激光雷达作为源
+    observation_sources: ["scan"]
+    scan:
+      type: "scan"
+      topic: "/scan"
+      min_height: 0.02
+      max_height: 1.0
+      enabled: True
+
+lifecycle_manager_navigation:
+  ros__parameters:
+    autostart: true
+    # ✅ 修复：移除costmap节点和collision_monitor，它们由nav2_bringup自动管理
+    # 或者可能导致启动问题
+    node_names:
+      - controller_server
+      - smoother_server
+      - planner_server
+      - behavior_server
+      - bt_navigator
+      - waypoint_follower
+      - velocity_smoother
+
+
+
+# amcl:
+#   ros__parameters:
+#     use_sim_time: false
+#     alpha1: 0.2
+#     alpha2: 0.2
+#     alpha3: 0.2
+#     alpha4: 0.2
+#     alpha5: 0.2
+#     base_frame_id: "base_footprint"
+#     beam_skip_distance: 0.5
+#     beam_skip_error_threshold: 0.9
+#     beam_skip_threshold: 0.3
+#     do_beamskip: false
+#     global_frame_id: "map"
+#     lambda_short: 0.1
+#     laser_likelihood_max_dist: 2.0
+#     laser_max_range: 100.0
+#     laser_min_range: -1.0
+#     laser_model_type: "likelihood_field"
+#     max_beams: 60
+#     max_particles: 2000
+#     min_particles: 500
+#     odom_frame_id: "odom"
+#     pf_err: 0.05
+#     pf_z: 0.99
+#     recovery_alpha_fast: 0.0
+#     recovery_alpha_slow: 0.0
+#     resample_interval: 1
+#     robot_model_type: "omni"
+#     save_pose_rate: 0.5
+#     sigma_hit: 0.2
+#     tf_broadcast: true
+#     transform_tolerance: 1.0
+#     update_min_a: 0.2
+#     update_min_d: 0.25
+#     z_hit: 0.5
+#     z_max: 0.05
+#     z_rand: 0.5
+#     z_short: 0.05
+#     scan_topic: /scan
+
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map
+    robot_base_frame: base_footprint
+    odom_topic: /odom
+    bt_loop_duration: 10
+    default_server_timeout: 20
+    wait_for_service_timeout: 1000
+    action_server_result_timeout: 900.0
+    navigators: ["navigate_to_pose", "navigate_through_poses"]
+    navigate_to_pose:
+      plugin: "nav2_bt_navigator/NavigateToPoseNavigator" # 保持 /
+    navigate_through_poses:
+      plugin: "nav2_bt_navigator/NavigateThroughPosesNavigator" # 保持 /
+    error_code_names:
+      - compute_path_error_code
+      - follow_path_error_code
+
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    cmd_vel_topic: /cmd_vel_raw
+    controller_frequency: 20.0
+    costmap_update_timeout: 0.30
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.5         # 原0.3 - 更宽松的故障容忍
+    progress_checker_plugins: ["progress_checker"]
+    goal_checker_plugins: ["general_goal_checker"] 
+    controller_plugins: ["FollowPath"]
+    use_realtime_priority: false
+
+    # Progress checker parameters
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker" # 保持 :: (已验证通过)
+      required_movement_radius: 0.3   # 原0.5 - 更小的移动也算进度
+      movement_time_allowance: 20.0   # 原10.0 - 给更多时间移动
+    # Goal checker parameters
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker" # 保持 :: (已验证通过)
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.25
+    # DWB 控制器 - 更适合全向机器人和动态环境
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      debug_trajectory_details: True
+      # 速度限制 - 允许横向移动但优先前进
+      min_vel_x: 0.0                # 禁用后退，强制先转向再前进
+      max_vel_x: 0.15             # 降低前进速度
+      min_vel_y: -0.1
+      max_vel_y: 0.1              # 恢复横向能力，但低于X轴
+      max_vel_theta: 0.5
+      min_speed_xy: 0.0
+      max_speed_xy: 0.2           # 进一步降低速度
+      min_speed_theta: 0.0
+      # 加速度限制
+      acc_lim_x: 0.5
+      acc_lim_y: 0.5
+      acc_lim_theta: 1.0
+      decel_lim_x: -0.5
+      decel_lim_y: -0.5
+      decel_lim_theta: -1.0
+      # 轨迹采样参数
+      vx_samples: 20
+      vy_samples: 5                 # 恢复Y方向采样
+      vtheta_samples: 40
+      sim_time: 1.5
+      linear_granularity: 0.05
+      angular_granularity: 0.025
+      transform_tolerance: 0.2
+      # 目标容差
+      xy_goal_tolerance: 0.25
+      trans_stopped_velocity: 0.25
+      short_circuit_trajectory_evaluation: True
+      # 评分标准
+      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      BaseObstacle.scale: 0.05      # 原0.02 - 增大避障权重
+      PathAlign.scale: 48.0         # 增大 - 更严格跟随路径
+      PathAlign.forward_point_distance: 0.325  # 增大 - 看更远的点
+      GoalAlign.scale: 24.0
+      GoalAlign.forward_point_distance: 0.325  # 增大 - 看更远的点
+      PathDist.scale: 32.0
+      GoalDist.scale: 24.0
+      RotateToGoal.scale: 32.0
+      RotateToGoal.slowing_factor: 5.0
+      RotateToGoal.lookahead_time: -1.0
+      # 抗振荡参数
+      Oscillation.oscillation_reset_dist: 0.05
+      Oscillation.oscillation_reset_angle: 0.2
+      Oscillation.scale: 1.0
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 10.0      # 适中的更新频率
+      publish_frequency: 5.0
+      global_frame: odom
+      robot_base_frame: base_footprint
+      rolling_window: true
+      width: 5
+      height: 5
+      resolution: 0.05
+      # 使用圆形robot_radius（更简单稳定）
+      robot_radius: 0.28          # 机器人半径 + 安全边距
+      transform_tolerance: 0.5
+
+      plugins: ["obstacle_layer","voxel_layer","inflation_layer"]
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        footprint_clearing_enabled: true   # ✅ 清除footprint内的障碍物
+        observation_sources: scan
+        scan:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: true
+          clearing: true
+          inf_is_valid: true
+          obstacle_min_range: 0.30         # 激光雷达30cm盲区
+          obstacle_max_range: 3.0
+          raytrace_min_range: 0.0          # ✅ 修复: raytrace从0开始，确保近距离清除
+          raytrace_max_range: 10.0
+          min_obstacle_height: 0.0         # ✅ 新增：接受所有高度
+          max_obstacle_height: 2.0         # ✅ 新增：2米以内的障碍物
+
+      voxel_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: true
+        footprint_clearing_enabled: true
+        origin_z: 0.0
+        z_resolution: 0.05
+        z_voxels: 16
+        max_obstacle_height: 0.8
+        unknown_threshold: 15
+        mark_threshold: 0                  # 立即标记（检测灵敏）
+        publish_voxel_map: false
+        # ✅ 关键修复：同时使用激光雷达和相机
+        # 激光雷达负责360度clearing，相机负责前方marking
+        observation_sources: scan_marking scan_clearing depth_cam camera_scan
+
+        # ✅ 新增：激光雷达 - 用于标记障碍物
+        scan_marking:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: true                    # ✅ 关键：启用标记！
+          clearing: false                  # 不重复清除
+          min_obstacle_height: 0.10        # 10cm以上
+          max_obstacle_height: 0.5         # 50cm以下（雷达扫描高度范围）
+          obstacle_min_range: 0.30
+          obstacle_max_range: 6.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 0.0          # 不用于raytrace
+
+        # ✅ 激光雷达 - 仅用于CLEARING（360度清除粉色区域）
+        scan_clearing:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: false                   # 不标记（避免重复）
+          clearing: true                   # ✅ 关键：360度清除！
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.25
+          obstacle_max_range: 10.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 12.0         # 大范围清除
+
+        # ✅ 相机点云 - 用于标记3D障碍物
+        depth_cam:
+          topic: /camera/camera/depth/color/points
+          data_type: "PointCloud2"
+          sensor_frame: "camera_depth_optical_frame"
+          marking: true
+          clearing: true
+          min_obstacle_height: 0.08        # 8cm以上
+          max_obstacle_height: 0.8
+          obstacle_min_range: 0.60         # ✅ 相机盲区约0.6m
+          obstacle_max_range: 3.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+        # ✅ 相机伪激光 - 用于检测低矮障碍物
+        camera_scan:
+          topic: /camera/scan              # pointcloud_to_laserscan输出
+          data_type: "LaserScan"
+          marking: true                    # 标记低矮障碍物
+          clearing: true
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5         # 50cm以下的障碍物
+          obstacle_min_range: 0.50
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0           # 增大：代价下降更快，减少膨胀范围
+        inflation_radius: 0.30             # ✅ 减小膨胀半径，减少粉色区域
+
+      # 注意：local_costmap使用rolling_window模式，不需要static_layer
+      always_send_full_costmap: True
+
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 2.0
+      publish_frequency: 1.0
+      global_frame: map
+      robot_base_frame: base_footprint
+      robot_radius: 0.28          # 与local_costmap一致
+      resolution: 0.05
+      track_unknown_space: true
+      transform_tolerance: 0.5
+
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+        subscribe_to_updates: True
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        footprint_clearing_enabled: True
+        max_obstacle_height: 0.8
+        z_voxels: 16
+        origin_z: 0.0
+        z_resolution: 0.05
+        unknown_threshold: 15
+        mark_threshold: 0
+        publish_voxel_map: false
+        # ✅ 与local_costmap相同的配置
+        observation_sources: scan_marking scan_clearing depth_cam camera_scan
+
+        # ✅ 新增：激光雷达 - 用于标记障碍物
+        scan_marking:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: true                    # ✅ 关键：启用标记！
+          clearing: false
+          inf_is_valid: True
+          min_obstacle_height: 0.10
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.30
+          obstacle_max_range: 8.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 0.0
+
+        scan_clearing:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: false
+          clearing: true
+          inf_is_valid: True
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.25
+          obstacle_max_range: 10.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 12.0
+
+        depth_cam:
+          topic: /camera/camera/depth/color/points
+          sensor_frame: "camera_depth_optical_frame"
+          data_type: "PointCloud2"
+          marking: True
+          clearing: True
+          min_obstacle_height: 0.08
+          max_obstacle_height: 0.8
+          obstacle_min_range: 0.60
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+        camera_scan:
+          topic: /camera/scan
+          data_type: "LaserScan"
+          marking: true
+          clearing: true
+          min_obstacle_height: 0.0
+          max_obstacle_height: 0.5
+          obstacle_min_range: 0.50
+          obstacle_max_range: 3.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          observation_persistence: 0.0
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0             # ✅ 加快代价衰减
+        inflation_radius: 0.30               # ✅ 减小膨胀半径
+
+      always_send_full_costmap: True
+
+map_saver:
+  ros__parameters:
+    use_sim_time: false
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+    map_subscribe_transient_local: True
+
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    expected_planner_frequency: 20.0
+    planner_plugins: ["GridBased"]
+    costmap_update_timeout: 1.0
+    GridBased:
+      plugin: "nav2_smac_planner/SmacPlanner2D"
+      tolerance: 0.25                     # 目标容差
+      downsample_costmap: false           # 不降采样
+      downsampling_factor: 1
+      allow_unknown: true                 # 允许穿越未知区域
+      max_iterations: 1000000             # 最大迭代次数
+      max_planning_time: 2.0              # 最大规划时间
+      motion_model_for_search: "MOORE"    # 8向搜索
+      cost_travel_multiplier: 2.0         # 代价乘数
+      use_final_approach_orientation: false
+      smoother:
+        max_iterations: 1000
+        w_smooth: 0.3
+        w_data: 0.2
+        tolerance: 1.0e-10
+
+smoother_server:
+  ros__parameters:
+    use_sim_time: false
+    smoother_plugins: ["simple_smoother"]
+    simple_smoother:
+      plugin: "nav2_smoother::SimpleSmoother" # 保持 :: (已验证通过)
+      tolerance: 1.0e-10
+      max_its: 1000
+      do_refinement: True
+
+behavior_server:
+  ros__parameters:
+    use_sim_time: false
+    cmd_vel_topic: /cmd_vel_raw
+    local_costmap_topic: local_costmap/costmap_raw
+    global_costmap_topic: global_costmap/costmap_raw
+    local_footprint_topic: local_costmap/published_footprint
+    global_footprint_topic: global_costmap/published_footprint
+    cycle_frequency: 10.0
+    behavior_plugins: ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
+    spin:
+      plugin: "nav2_behaviors/Spin" # 修正为 /
+    backup:
+      plugin: "nav2_behaviors/BackUp" # 修正为 /
+    drive_on_heading:
+      plugin: "nav2_behaviors/DriveOnHeading" # 修正为 /
+    wait:
+      plugin: "nav2_behaviors/Wait" # 修正为 /
+    assisted_teleop:
+      plugin: "nav2_behaviors/AssistedTeleop" # 修正为 /
+    local_frame: odom
+    global_frame: map
+    robot_base_frame: base_footprint
+    transform_tolerance: 0.1
+    simulate_ahead_time: 3.0        # 原2.0 - 更长的前瞻时间
+    max_rotational_vel: 0.5         # 原0.4 - 更快旋转脱困
+    min_rotational_vel: 0.1
+    rotational_acc_lim: 3.2
+
+waypoint_follower:
+  ros__parameters:
+    use_sim_time: false
+    loop_rate: 20
+    stop_on_failure: false
+    action_server_result_timeout: 900.0
+    waypoint_task_executor_plugin: "wait_at_waypoint"
+    wait_at_waypoint:
+      plugin: "nav2_waypoint_follower::WaitAtWaypoint" # 保持 :: (Humble下通常是这个)
+      enabled: True
+      waypoint_pause_duration: 200
+
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: false
+    smoothing_frequency: 20.0
+    feedback: "OPEN_LOOP"
+    max_velocity: [0.15, 0.1, 0.5]       # 恢复Y轴速度
+    min_velocity: [-0.15, -0.1, -0.5]
+    max_accel: [0.3, 0.3, 1.0]           # 恢复Y轴加速度
+    max_decel: [-0.3, -0.3, -1.0]
+    odom_topic: /odom
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0
+    cmd_vel_in_topic: /cmd_vel_raw
+    cmd_vel_out_topic: /cmd_vel
+
+# Collision Monitor - 实时碰撞监测，紧急停止
+# 简化配置，避免启动问题
+collision_monitor:
+  ros__parameters:
+    base_frame_id: "base_footprint"
+    odom_frame_id: "odom"
+    cmd_vel_in_topic: "/cmd_vel"
+    cmd_vel_out_topic: "/cmd_vel_safe"
+    state_topic: "collision_monitor_state"
+    transform_tolerance: 0.5
+    source_timeout: 2.0
+    base_shift_correction: True
+    stop_pub_timeout: 2.0
+    # 使用简单的圆形检测区域
+    polygons: ["PolygonStop", "PolygonSlow"]
+    PolygonStop:
+      type: "circle"
+      radius: 0.30
+      action_type: "stop"
+      max_points: 3
+      visualize: True
+      polygon_pub_topic: "polygon_stop"
+    PolygonSlow:
+      type: "circle"
+      radius: 0.50
+      action_type: "slowdown"
+      max_points: 3
+      slowdown_ratio: 0.3
+      visualize: True
+      polygon_pub_topic: "polygon_slow"
+    # 仅使用激光雷达作为源
+    observation_sources: ["scan"]
+    scan:
+      type: "scan"
+      topic: "/scan"
+      min_height: 0.02
+      max_height: 1.0
+      enabled: True
+
+lifecycle_manager_navigation:
+  ros__parameters:
+    autostart: true
+    # ✅ 修复：移除costmap节点和collision_monitor，它们由nav2_bringup自动管理
+    # 或者可能导致启动问题
+    node_names:
+      - controller_server
+      - smoother_server
+      - planner_server
+      - behavior_server
+      - bt_navigator
+      - waypoint_follower
+      - velocity_smoother
+

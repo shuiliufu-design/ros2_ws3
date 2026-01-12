@@ -1,0 +1,99 @@
+[INFO] [launch]: All log files can be found below /home/qiyue/.ros/log/2025-12-07-15-25-42-410634-qiyue-Legion-Y7000P-IRX9-34198
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ign gazebo-1]: process started with pid [34212]
+[INFO] [robot_state_publisher-2]: process started with pid [34214]
+[INFO] [create-3]: process started with pid [34216]
+[INFO] [parameter_bridge-4]: process started with pid [34218]
+[robot_state_publisher-2] [WARN] [1765092343.032617252] [kdl_parser]: The root link base_footprint has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-2] [INFO] [1765092343.032668466] [robot_state_publisher]: got segment Front_Left
+[robot_state_publisher-2] [INFO] [1765092343.032695482] [robot_state_publisher]: got segment Front_Right
+[robot_state_publisher-2] [INFO] [1765092343.032699255] [robot_state_publisher]: got segment Rear_Left
+[robot_state_publisher-2] [INFO] [1765092343.032701958] [robot_state_publisher]: got segment Rear_Right
+[robot_state_publisher-2] [INFO] [1765092343.032704406] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1765092343.032707080] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1765092343.032709462] [robot_state_publisher]: got segment baseup_link
+[robot_state_publisher-2] [INFO] [1765092343.032711822] [robot_state_publisher]: got segment lidar_link
+[create-3] [INFO] [1765092343.045046613] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1765092343.055726348] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (ignition.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.056709848] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cmd_vel (ignition.msgs.Twist) -> /cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.057022593] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (ignition.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.057273293] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odometry (ignition.msgs.Odometry) -> /odometry (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.057849778] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (ignition.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.058205746] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (ignition.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765092343.058450196] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (ignition.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[create-3] [INFO] [1765092343.689365108] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1765092343.788042403] [ros_gz_sim]: Requested creation of entity.
+[create-3] [INFO] [1765092343.788121503] [ros_gz_sim]: OK creation of entity.
+[INFO] [create-3]: process has finished cleanly [pid 34216]
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[INFO] [async_slam_toolbox_node-5]: process started with pid [34599]
+[INFO] [rviz2-6]: process started with pid [34601]
+[async_slam_toolbox_node-5] [INFO] [1765092348.401895323] [slam_toolbox]: Node using stack size 40000000
+[async_slam_toolbox_node-5] [INFO] [1765092348.437060685] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-5] [INFO] [1765092348.437337032] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[async_slam_toolbox_node-5] [ERROR] [1765092348.456258942] [slam_toolbox]: serialization::Read: Failed to open requested file: test_map.
+[async_slam_toolbox_node-5] [ERROR] [1765092348.456290497] [slam_toolbox]: DeserializePoseGraph: Failed to read file: test_map.
+[async_slam_toolbox_node-5] [WARN] [1765092348.468998176] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.2 m)
+[async_slam_toolbox_node-5] [WARN] [1765092348.469077014] [slam_toolbox]: maximum laser range setting (20.0 m) exceeds the capabilities of the used Lidar (10.0 m)
+[async_slam_toolbox_node-5] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-5] Registering sensor: [Custom Described Lidar]
+[rviz2-6] [INFO] [1765092348.856841970] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-6] [INFO] [1765092348.856955133] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-6] [INFO] [1765092348.974866290] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-6] [INFO] [1765092349.463069646] [rviz2]: Trying to create a map of size 272 x 203 using 1 swatches
+[INFO] [controller_server-7]: process started with pid [34693]
+[INFO] [smoother_server-8]: process started with pid [34695]
+[INFO] [planner_server-9]: process started with pid [34697]
+[INFO] [behavior_server-10]: process started with pid [34699]
+[INFO] [bt_navigator-11]: process started with pid [34701]
+[INFO] [waypoint_follower-12]: process started with pid [34703]
+[INFO] [velocity_smoother-13]: process started with pid [34705]
+[INFO] [lifecycle_manager-14]: process started with pid [34707]
+[lifecycle_manager-14] [INFO] [1765092351.551172285] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-14] [INFO] [1765092351.557253004] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[waypoint_follower-12] [INFO] [1765092351.559113918] [waypoint_follower]: 
+[waypoint_follower-12] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-12] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-8] [INFO] [1765092351.559626817] [smoother_server]: 
+[smoother_server-8] 	smoother_server lifecycle node launched. 
+[smoother_server-8] 	Waiting on external lifecycle transitions to activate
+[smoother_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-9] [INFO] [1765092351.564266480] [planner_server]: 
+[planner_server-9] 	planner_server lifecycle node launched. 
+[planner_server-9] 	Waiting on external lifecycle transitions to activate
+[planner_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-7] [INFO] [1765092351.565852105] [controller_server]: 
+[controller_server-7] 	controller_server lifecycle node launched. 
+[controller_server-7] 	Waiting on external lifecycle transitions to activate
+[controller_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-12] [INFO] [1765092351.573114298] [waypoint_follower]: Creating
+[bt_navigator-11] [INFO] [1765092351.578439889] [bt_navigator]: 
+[bt_navigator-11] 	bt_navigator lifecycle node launched. 
+[bt_navigator-11] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-11] [INFO] [1765092351.578670828] [bt_navigator]: Creating
+[smoother_server-8] [INFO] [1765092351.578928725] [smoother_server]: Creating smoother server
+[planner_server-9] [INFO] [1765092351.582477216] [planner_server]: Creating
+[velocity_smoother-13] [INFO] [1765092351.583059481] [velocity_smoother]: 
+[velocity_smoother-13] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-13] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[behavior_server-10] [INFO] [1765092351.583162510] [behavior_server]: 
+[behavior_server-10] 	behavior_server lifecycle node launched. 
+[behavior_server-10] 	Waiting on external lifecycle transitions to activate
+[behavior_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-9] [INFO] [1765092351.594828565] [global_costmap.global_costmap]: 
+[planner_server-9] 	global_costmap lifecycle node launched. 
+[planner_server-9] 	Waiting on external lifecycle transitions to activate
+[planner_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-9] [INFO] [1765092351.598027817] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-7] [INFO] [1765092351.602836410] [controller_server]: Creating controller server
+[controller_server-7] [INFO] [1765092351.612394003] [local_costmap.local_costmap]: 
+[controller_server-7] 	local_costmap lifecycle node launched. 
+[controller_server-7] 	Waiting on external lifecycle transitions to activate
+[controller_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-7] [INFO] [1765092351.614392253] [local_costmap.local_costmap]: Creating Costmap

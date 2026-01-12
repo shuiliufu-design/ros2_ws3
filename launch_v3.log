@@ -1,0 +1,1229 @@
+[INFO] [launch]: All log files can be found below /home/qiyue/.ros/log/2025-12-07-15-41-20-246500-qiyue-Legion-Y7000P-IRX9-38356
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ign gazebo-1]: process started with pid [38370]
+[INFO] [robot_state_publisher-2]: process started with pid [38372]
+[INFO] [create-3]: process started with pid [38374]
+[INFO] [parameter_bridge-4]: process started with pid [38377]
+[robot_state_publisher-2] [WARN] [1765093280.863206102] [kdl_parser]: The root link base_footprint has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-2] [INFO] [1765093280.863279466] [robot_state_publisher]: got segment Front_Left
+[robot_state_publisher-2] [INFO] [1765093280.863314765] [robot_state_publisher]: got segment Front_Right
+[robot_state_publisher-2] [INFO] [1765093280.863320352] [robot_state_publisher]: got segment Rear_Left
+[robot_state_publisher-2] [INFO] [1765093280.863324821] [robot_state_publisher]: got segment Rear_Right
+[robot_state_publisher-2] [INFO] [1765093280.863329197] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1765093280.863333877] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1765093280.863338627] [robot_state_publisher]: got segment baseup_link
+[robot_state_publisher-2] [INFO] [1765093280.863342959] [robot_state_publisher]: got segment lidar_link
+[create-3] [INFO] [1765093280.868295928] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1765093280.884502195] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (ignition.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.885545540] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cmd_vel (ignition.msgs.Twist) -> /cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.886033004] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (ignition.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.886272138] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odometry (ignition.msgs.Odometry) -> /odometry (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.886883645] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (ignition.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.887105619] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (ignition.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1765093280.887358560] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (ignition.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[create-3] [INFO] [1765093281.071190845] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1765093281.183197210] [ros_gz_sim]: Requested creation of entity.
+[create-3] [INFO] [1765093281.183253199] [ros_gz_sim]: OK creation of entity.
+[INFO] [create-3]: process has finished cleanly [pid 38374]
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[ign gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[INFO] [async_slam_toolbox_node-5]: process started with pid [38666]
+[INFO] [rviz2-6]: process started with pid [38668]
+[async_slam_toolbox_node-5] [INFO] [1765093285.892278843] [slam_toolbox]: Node using stack size 40000000
+[async_slam_toolbox_node-5] [INFO] [1765093285.916055381] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-5] [INFO] [1765093285.916203215] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.697000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [ERROR] [1765093285.925947762] [slam_toolbox]: serialization::Read: Failed to open requested file: test_map.
+[async_slam_toolbox_node-5] [ERROR] [1765093285.925970408] [slam_toolbox]: DeserializePoseGraph: Failed to read file: test_map.
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.717000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093285.949101781] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 477.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] [WARN] [1765093285.952493087] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.2 m)
+[async_slam_toolbox_node-5] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-5] Registering sensor: [Custom Described Lidar]
+[async_slam_toolbox_node-5] [WARN] [1765093285.952943014] [slam_toolbox]: maximum laser range setting (20.0 m) exceeds the capabilities of the used Lidar (10.0 m)
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.737000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.757000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.777000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.797000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.045833812] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 477.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.817000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.837000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.857000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.877000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.897000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.917000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.937000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.187096053] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 477.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.957000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.977000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 477.997000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.247013496] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.017000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.037000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.057000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.077000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.097000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.343606005] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.117000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.137000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.157000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093286.417303164] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-6] [INFO] [1765093286.417410636] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.177000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.197000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.455093553] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.217000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.237000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.257000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.277000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093286.521829618] [rviz2]: Stereo is NOT SUPPORTED
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.297000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.544688660] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.317000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.317000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.337000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.337000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.357000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.357000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.377000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.377000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.397000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.397000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.654397817] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093286.656419174] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.417000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.417000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.437000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.437000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.457000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.457000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.477000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.477000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.497000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.497000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.517000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.517000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.764282768] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093286.777363398] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.537000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.537000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.557000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.557000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.577000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.577000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.597000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.597000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.852609011] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.617000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.617000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093286.873225852] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.637000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.637000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.657000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.657000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.677000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.677000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093286.938696662] [rviz2]: Trying to create a map of size 272 x 203 using 1 swatches
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.697000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.697000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093286.949883717] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.717000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.717000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093286.968625930] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.737000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.737000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.757000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.757000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.777000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.777000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.797000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.797000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.055863898] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.817000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.817000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.065202490] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.837000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.837000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.857000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.857000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.877000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.877000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.897000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.897000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.154106621] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 478.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093287.160767008] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 478.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.917000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.917000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.937000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.937000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.957000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.957000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.977000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.977000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.997000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 478.997000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.257522595] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.017000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.017000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.037000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.037000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.288709634] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.057000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.057000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.077000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.077000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.097000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.097000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.360558239] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.117000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.117000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.385263172] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.137000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.137000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.157000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.157000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.177000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.177000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.197000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.197000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.458984202] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.217000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.217000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.480962016] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.237000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.237000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.257000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.257000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.277000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.277000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.297000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.297000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.559146329] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.317000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.317000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.577531992] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.337000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.337000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.357000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.357000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.377000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.377000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.397000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.397000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.658077012] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.417000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.417000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.673320836] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.437000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.437000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.457000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.457000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.477000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.477000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.497000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.497000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.761615040] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093287.768979925] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.517000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.517000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.537000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.537000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.557000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.557000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.577000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.577000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.597000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.597000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.862059649] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093287.865266752] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.617000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.617000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.637000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.637000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.657000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.657000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.677000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.677000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.697000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.697000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093287.961691892] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.717000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.717000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093287.992871898] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.737000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.737000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.757000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.757000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.777000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.777000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.797000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.797000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.063370667] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.817000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.817000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.089449381] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.837000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.837000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.857000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.857000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.877000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.877000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.897000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.897000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.165634660] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 479.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.917000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.917000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.185435860] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 479.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.937000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.937000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.957000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.957000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.977000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.977000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.997000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 479.997000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.264225702] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.017000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.017000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.281355875] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.037000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.037000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.057000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.057000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.077000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.077000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.097000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.097000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.366404545] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.117000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.117000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.376811678] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.137000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.137000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.157000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.157000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.177000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.177000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.197000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.197000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.466670375] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093288.472448930] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.217000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.217000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.237000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.237000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.257000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.257000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.277000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.277000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.297000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.297000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.564368284] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093288.569303320] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.317000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.317000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.337000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.337000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.357000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.357000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.377000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.377000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.397000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.397000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.670894093] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.417000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.417000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.697457107] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.437000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.437000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.457000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.457000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.477000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.477000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.497000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.497000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.774180847] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.517000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.517000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.793045789] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.537000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.537000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.557000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.557000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.577000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.577000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.597000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.597000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.876208938] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.617000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.637000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.657000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.677000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.697000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093288.969336261] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.717000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.737000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.617000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.889055976] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.637000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.657000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.677000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.697000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.717000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093288.984734377] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.700 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.737000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[INFO] [controller_server-7]: process started with pid [38759]
+[INFO] [smoother_server-8]: process started with pid [38761]
+[INFO] [planner_server-9]: process started with pid [38763]
+[INFO] [behavior_server-10]: process started with pid [38765]
+[INFO] [bt_navigator-11]: process started with pid [38767]
+[INFO] [waypoint_follower-12]: process started with pid [38769]
+[INFO] [velocity_smoother-13]: process started with pid [38771]
+[INFO] [lifecycle_manager-14]: process started with pid [38773]
+[waypoint_follower-12] [ERROR] [1765093289.014397223] [rcl]: Failed to parse global arguments
+[waypoint_follower-12] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[waypoint_follower-12]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[velocity_smoother-13] [ERROR] [1765093289.015228730] [rcl]: Failed to parse global arguments
+[velocity_smoother-13] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[velocity_smoother-13]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[planner_server-9] [ERROR] [1765093289.015378719] [rcl]: Failed to parse global arguments
+[planner_server-9] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[planner_server-9]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.757000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.757000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[smoother_server-8] [ERROR] [1765093289.023551985] [rcl]: Failed to parse global arguments
+[smoother_server-8] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[smoother_server-8]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[controller_server-7] [ERROR] [1765093289.024693543] [rcl]: Failed to parse global arguments
+[controller_server-7] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[controller_server-7]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[lifecycle_manager-14] [INFO] [1765093289.034040441] [lifecycle_manager_navigation]: Creating
+[bt_navigator-11] [ERROR] [1765093289.034714563] [rcl]: Failed to parse global arguments
+[bt_navigator-11] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[behavior_server-10] [ERROR] [1765093289.034752886] [rcl]: Failed to parse global arguments
+[behavior_server-10] terminate called after throwing an instance of 'rclcpp::exceptions::RCLInvalidROSArgsError'
+[bt_navigator-11]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[behavior_server-10]   what():  failed to initialize rcl: Couldn't parse params file: '--params-file /tmp/launch_params_o51v1uxy'. Error: Cannot have a value before ros__parameters at line 364, at ./src/parse.c:799, at ./src/rcl/arguments.c:406
+[lifecycle_manager-14] [INFO] [1765093289.037162524] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.777000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.777000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.797000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.797000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.071064749] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093289.080920975] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.817000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.817000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.837000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.837000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.857000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.857000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.877000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.877000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.897000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.897000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.179330036] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 480.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.917000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.917000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.937000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.937000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093289.208892860] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 480.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.957000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.957000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.977000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.977000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.997000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 480.997000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.271786190] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093289.272844374] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.017000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.017000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.037000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.037000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.057000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.057000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.077000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.077000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.097000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.097000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.372128430] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.117000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.117000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093289.400719816] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.137000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.137000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.157000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.157000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.177000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.177000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.197000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.197000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.472032688] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.217000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.217000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093289.497010864] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.237000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.237000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.257000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.257000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.277000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.277000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.297000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.297000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.578267417] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.317000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.317000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] [INFO] [1765093289.592898289] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.337000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.337000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.357000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.357000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.377000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.377000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.397000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.397000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.682231829] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093289.689104153] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.417000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.417000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.437000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.437000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.457000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.457000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.477000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.477000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.497000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.497000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] [INFO] [1765093289.781609977] [slam_toolbox]: Message Filter dropping message: frame 'lidar_link' at time 481.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] [INFO] [1765093289.785078735] [rviz2]: Message Filter dropping message: frame 'lidar_link' at time 481.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.517000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.517000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.537000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.537000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.557000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.557000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.577000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.577000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp
+[async_slam_toolbox_node-5] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.597000 according to authority Authority undetectable
+[async_slam_toolbox_node-5] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[async_slam_toolbox_node-5]          at line 294 in ./src/buffer_core.cpp
+[rviz2-6] Warning: TF_OLD_DATA ignoring data from the past for frame base_footprint at time 481.597000 according to authority Authority undetectable
+[rviz2-6] Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[rviz2-6]          at line 294 in ./src/buffer_core.cpp

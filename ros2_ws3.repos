@@ -1,0 +1,9 @@
+repositories:
+  realsense-ros:
+    type: git
+    url: https://github.com/realsenseai/realsense-ros.git
+    version: 5ef0858501a94d769381417aaafe6e0f56515292
+  sllidar_ros2:
+    type: git
+    url: https://github.com/Slamtec/sllidar_ros2.git
+    version: 34300099fadfc772965962dec837bf436706188f

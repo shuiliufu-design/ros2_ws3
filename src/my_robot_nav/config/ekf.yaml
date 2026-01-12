@@ -1,0 +1,45 @@
+# ekf.yaml
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0
+    two_d_mode: true
+    publish_acceleration: false
+    publish_tf: true
+    map_frame: map              # 虽然我们做odom融合，但这里保持默认
+    odom_frame: odom            # 融合后的输出坐标系
+    base_link_frame: base_footprint
+    world_frame: odom           # 本地融合模式，world = odom
+
+    # ------------------------------------------------
+    # 数据源 1: 轮式里程计 (Wheel Odometry)
+    # ------------------------------------------------
+    odom0: /odom
+    # 格式: [x, y, z, 
+    #        roll, pitch, yaw, 
+    #        vx, vy, vz, 
+    #        vroll, vpitch, vyaw, 
+    #        ax, ay, az]
+    # 我们只使用 vx, vy (索引 6, 7)。不使用位置，也不使用角速度。
+    odom0_config: [false, false, false,   # x, y, z (位置) -> 不用
+                   false, false, false,   # roll, pitch, yaw (姿态) -> 不用
+                   true,  true,  false,   # vx, vy, vz (线速度) -> ✅ 用 X和Y 速度
+                   false, false, true,    # vroll, vpitch, vyaw (角速度) -> ✅ 启用vyaw！修复旋转问题
+                   false, false, false]   # ax, ay, az (加速度) -> 不用
+    odom0_queue_size: 10
+    odom0_differential: false # 使用速度，不需要差分
+
+    # ------------------------------------------------
+    # 数据源 2: RealSense IMU
+    # ------------------------------------------------
+    imu0: /camera/imu_combined   # 确保这里的名字和实际话题一致
+    # 我们只使用 vyaw (角速度 Z，索引 11)。
+    # 如果你的加速度计比较准，也可以开启 ax (索引 12)，但通常容易漂移，先只用陀螺仪。
+    # 格式: [x, y, z, r, p, y, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az]
+    # 修改 imu0_config，把第 11 个 (索引10, vpitch) 也设为 true
+    imu0_config: [false, false, false,  # x:   X轴坐标 (IMU 无法直接测)，y:   Y轴坐标 (IMU 无法直接测)，z:   Z轴坐标 (IMU 无法直接测)
+                  false, false, false,  # roll:  横滚角 (绝对角度)，pitch: 俯仰角 (绝对角度)， yaw:   偏航角 (绝对角度，即指南针方向)
+                  false, false, false,  # vx:  X轴线速度 (积分加速度会有巨大漂移)，vy:  Y轴线速度 (同上)，vz:  Z轴线速度 (同上)
+                  false, false, true,   # vroll:  横滚角速度 (X轴旋转速度) -> 设为 false，因为地面车很少发生侧翻旋转。vpitch: 俯仰角速度 (Y轴旋转速度) -> ✅ 设为 true，感知前后颠簸或上下坡，vyaw:   偏航角速度 (Z轴旋转速度) -> ✅ 设为 true，这是修正转向最关键的数据！
+                  false, false, false]  # ax:  X轴加速度 (通常噪音大，容易干扰融合)，ay:  Y轴加速度 (同上)，az:  Z轴加速度 (包含重力，处理麻烦，通常忽略)
+    imu0_queue_size: 10
+    imu0_remove_gravitational_acceleration: true
