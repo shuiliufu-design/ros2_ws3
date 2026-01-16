@@ -66,6 +66,10 @@ class BaseDriver(Node):
 
             # Expecting "e1 e2 e3 e4" (space separated)
             if not line: return
+
+            # ✅ Fix: Ignore debug/tuning messages starting with 't'
+            if line.startswith('t') or line.startswith('m'):
+                return
             
             parts = line.split()
             if len(parts) == 4:

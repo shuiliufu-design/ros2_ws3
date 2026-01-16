@@ -20,3 +20,8 @@ Thumbs.db
 # third-party repos (not tracked)
 src/sllidar_ros2/
 src/realsense-ros/
+
+# ROS2 colcon
+build/
+install/
+log/

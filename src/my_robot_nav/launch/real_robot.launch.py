@@ -96,11 +96,10 @@ def generate_launch_description():
             'pointcloud.stream_index_filter': 0,
 
             
-            # ✅✅✅ 必须补上这一行！没有它，Costmap 就像瞎子一样无法清除
-            # 作用：填补深度图的黑洞，让 NaN 变成有效的距离值，触发清除逻辑
-            'filters': 'spatial,decimation,hole_filling',
+            # ✅ 移除 hole_filling 滤波器以消除障碍物残留
+            # hole_filling 会将深度空洞用周围值填充，导致人走过后留下"拖影"
+            'filters': 'spatial,decimation',
             'decimation_filter.filter_magnitude': 2,
-            'hole_filling.filter_magnitude': 2,
         }],
         # ✅ 添加重映射：把合并后的话题名字统一一下，方便 EKF 听
         remappings=[
@@ -146,79 +145,58 @@ def generate_launch_description():
 
     # ... 在 generate_launch_description 中 ...
 
-    # ✅✅✅ 3D 点云转 2D 激光 - 用于检测低于雷达的障碍物
-    # 关键：将3D点云投影到水平面，检测低矮障碍物
-    pointcloud_to_laserscan_node = Node(
-        package='pointcloud_to_laserscan',
-        executable='pointcloud_to_laserscan_node',
-        name='pointcloud_to_laserscan',
-        output='screen',
-        parameters=[{
-            'target_frame': 'base_footprint',  # 转换到机器人水平坐标系
-            'transform_tolerance': 0.2,
-            # ✅ 关键：检测低矮障碍物（地面凸起、门槛等）
-            # 相机安装高度98cm，俯仰29度，最近可见地面约0.6m
-            'min_height': 0.02,                # ✅ 2cm以上（检测小凸起）
-            'max_height': 0.40,                # ✅ 40cm以下（低于雷达扫描高度）
-            'angle_min': -0.759,               # -43.5度 (D435i FOV)
-            'angle_max': 0.759,                # +43.5度
-            'angle_increment': 0.0087,
-            'scan_time': 0.067,                # 15Hz
-            'range_min': 0.55,                 # ✅ 相机盲区约55cm
-            'range_max': 3.0,
-            'use_inf': True,                   # ✅ 关键：空区域发inf用于清除
-            'inf_epsilon': 1.0,
-        }],
-        remappings=[
-            ('cloud_in', '/camera/camera/depth/color/points'),
-            ('scan', '/camera/scan')
-        ]
-    )
+    # ✅✅✅ 3D 点云转 2D 激光 (已禁用: STVL直接处理PointCloud2)
+    # pointcloud_to_laserscan_node = Node(
+    #     package='pointcloud_to_laserscan',
+    #     executable='pointcloud_to_laserscan_node',
+    #     name='pointcloud_to_laserscan',
+    #     output='screen',
+    #     parameters=[{
+    #         'target_frame': 'base_footprint',
+    #         'transform_tolerance': 0.2,
+    #         'min_height': 0.03,
+    #         'max_height': 2.0,
+    #         'angle_min': -0.759,
+    #         'angle_max': 0.759,
+    #         'angle_increment': 0.0087,
+    #         'scan_time': 0.067,
+    #         'range_min': 0.30,
+    #         'range_max': 3.0,
+    #         'use_inf': True,
+    #         'inf_epsilon': 1.0,
+    #     }],
+    #     remappings=[
+    #         ('cloud_in', '/camera/depth/color/voxels'),
+    #         ('scan', '/camera/scan')
+    #     ]
+    # )
 
     # ... 记得把 pointcloud_to_laserscan_node 加入到最后的 return LaunchDescription 列表中 ...
 
-    # 🎯 点云体素化 - 降低点云密度，减轻CPU负担
-    point_cloud_xyzrgb_node = Node(
-        package='rtabmap_util',
-        executable='point_cloud_xyzrgb',
-        name='point_cloud_xyzrgb',
-        output='screen',
-        parameters=[{
-            'decimation': 4,               # 降采样因子
-            'voxel_size': 0.05,            # 体素大小 5cm
-            'approx_sync': True,
-        }],
-        remappings=[
-            ('rgb/image', '/camera/camera/color/image_raw'),
-            ('depth/image', '/camera/camera/aligned_depth_to_color/image_raw'),
-            ('rgb/camera_info', '/camera/camera/color/camera_info'),
-            ('cloud', '/camera/depth/color/voxels'),  # 输出：体素化点云
-        ]
-    )
+    # 🎯 点云体素化 (已禁用: STVL直接处理原始点云)
+    # point_cloud_xyzrgb_node = Node(
+    #     package='rtabmap_util',
+    #     executable='point_cloud_xyzrgb',
+    #     name='point_cloud_xyzrgb',
+    #     output='screen',
+    #     parameters=[{
+    #         'decimation': 4,
+    #         'voxel_size': 0.05,
+    #         'approx_sync': True,
+    #         'noise_filter_radius': 0.05,
+    #         'noise_filter_min_neighbors': 5,
+    #     }],
+    #     remappings=[
+    #         ('rgb/image', '/camera/camera/color/image_raw'),
+    #         ('depth/image', '/camera/camera/aligned_depth_to_color/image_raw'),
+    #         ('rgb/camera_info', '/camera/camera/color/camera_info'),
+    #         ('cloud', '/camera/depth/color/voxels'),
+    #     ]
+    # )
 
-    # 🎯 RTAB-Map 障碍物检测 - 分离地面和障碍物
-    # ✅ 优化：检测低矮障碍物
-    obstacles_detection_node = Node(
-        package='rtabmap_util',
-        executable='obstacles_detection',
-        name='obstacles_detection',
-        output='screen',
-        parameters=[{
-            'frame_id': 'base_footprint',
-            'wait_for_transform': 0.2,
-            'min_cluster_size': 5,         # ✅ 更小：检测小凸起
-            'max_obstacle_height': 0.5,    # ✅ 降低：只检测低矮障碍物
-            # 地面检测参数
-            'normal_estimation_radius': 0.03,
-            'ground_normal_angle': 0.2,    # 地面法线容忍角度
-            'cluster_radius': 0.05,        # 更小的聚类半径
-        }],
-        remappings=[
-            ('cloud', '/camera/depth/color/voxels'),
-            ('ground', '/ground'),
-            ('obstacles', '/obstacles'),
-        ]
-    )
+    # 🎯 RTAB-Map 障碍物检测 (已禁用：改用更稳定的去噪+高度切割方案)
+    # obstacles_detection_node = Node(...) 
+
 
     # ... (后面接 scan_fixer 和 base_driver) ... 
 
@@ -341,9 +319,9 @@ def generate_launch_description():
         # camera_tf_node,
         # depth_to_scan_node,
         ekf_node,
-        pointcloud_to_laserscan_node,
-        point_cloud_xyzrgb_node,
-        obstacles_detection_node,
+        # pointcloud_to_laserscan_node,   # 已禁用: STVL直接处理PointCloud2
+        # point_cloud_xyzrgb_node,        # 已禁用: STVL直接处理原始点云
+        # obstacles_detection_node,
         
         # Delay SLAM/Nav slightly to ensure transforms are ready
         TimerAction(
