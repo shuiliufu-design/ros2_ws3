@@ -37,6 +37,7 @@ install(PROGRAMS
   src/cmd_vel_to_targets.py
   src/omni_odometry.py
   src/scan_fixer.py
+  src/return_home.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -30,6 +30,7 @@ install(
   PROGRAMS
   scripts/vision_node.py
   scripts/person_follower.py
+  scripts/person_follower_nav2.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

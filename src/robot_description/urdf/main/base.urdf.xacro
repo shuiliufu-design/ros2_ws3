@@ -118,7 +118,7 @@
   <xacro:include filename="$(find robot_description)/urdf/vision_voice/realsense_camera/_d435i.urdf.xacro" />
 
     <xacro:sensor_d435i parent="baseup_link" name="camera" use_nominal_extrinsics="true">
-      <origin xyz="0.149 0 0.984" rpy="0 0.52255 0"/>
+      <origin xyz="0.149 0 0.984" rpy="0 0.562 0"/>
     </xacro:sensor_d435i>
 </robot>
 
